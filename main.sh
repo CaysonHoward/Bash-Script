@@ -9,7 +9,7 @@ getUserName(){
 
 userMenu() {
     echo -e "1. Name"
-    echo -e "2. My other name"
+    echo -e "2. Random number game"
     echo -e "3. Python"
     echo -e "4. Exit"
 
@@ -20,13 +20,17 @@ userMenu() {
         echo "My name is Cayson"
     fi
     if [ $choice -eq 2 ]; then
-        echo "My other name is Bob"
+        randomNumberGuessing
     fi
     if [ $choice -eq 3 ]; then
         getUserName
     fi
 
     done
+}
+
+randomNumberGuessing(){
+
 }
 
 userMenu
