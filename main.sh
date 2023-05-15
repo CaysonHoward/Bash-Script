@@ -30,7 +30,31 @@ userMenu() {
 }
 
 randomNumberGuessing(){
+    secret_number=$((RANDOM % 100 + 1))
 
+    echo "Welcome to the number guessing game!"
+
+    while true; do
+        read -p "Guess a number between 1 and 100: " guess
+
+        # Check if the input is a valid number
+        if [[ ! $guess =~ ^[0-9]+$ ]]; then
+            echo "Invalid input. Please enter a valid number."
+            continue
+        fi
+
+        # Compare the guess with the secret number
+        if (( guess < secret_number )); then
+            echo "Too low! Try again."
+        elif (( guess > secret_number )); then
+            echo "Too high! Try again."
+        else
+            echo "Congratulations! You guessed the correct number."
+            break
+        fi
+    done
+
+    echo "Thank you for playing the game!"
 }
 
 userMenu
